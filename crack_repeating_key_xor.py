@@ -114,7 +114,7 @@ def break_repeating_xor_key(cipher: bytes) -> bytes:
     msg_size = len(cipher)
     H_scores_avg = dict()
     
-    for key_size in range(2, 100):
+    for key_size in range(2, 20):
 
         H_scores = []
         H_distances = []
@@ -182,6 +182,6 @@ cipher = repeating_xor_key(message, b'asd8tT^&STD')
 
 
 # cipher = open('../KT-B42.msg', 'r').read()
-# cipher = bytes.fromhex(cipher)
-
+cipher = 'bac936c23a9aeb60b0c1891f3d37511c3fbe9a047a3625fe08c041418f441b59b70d8e91f1c55ce5365ebf4ff5d732f8d4bd06dd4843e1ed27d29d9a9b1df263549cf74528a908452ab1e9f1cc75dcc24755d11f654714a9e0a89c2f2fc20cc7e6494474fdbe0f07b0f2ca90e44fa415d4eb7ed0c842c0a45205051fd3a892a0'
+cipher = bytes.fromhex(cipher)
 break_repeating_xor_key(cipher)
